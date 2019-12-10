@@ -335,8 +335,8 @@ if($issuetype -eq 1)
 				#Parse each disk free space
 					$deviceid = $_.DeviceID
 					$freespace = $_.FreeSpace/1024/1024
-					$needfreespace = $phymem_info*2+100+$reserved_space
-					$pagefile_size = [int32]($phymem_info+100)
+					$needfreespace = $phymem_info*2+257+$reserved_space
+					$pagefile_size = [int32]($phymem_info/1024)*1024+257
 					if($freespace -gt $needfreespace)
 					{
 						Write-Host "=====Disk $deviceid has enough free space, start to config full dump====="
@@ -436,8 +436,8 @@ if($issuetype -eq 1)
 					{
 						#phical mememory is less than 32G , prefer to config full dump
 						Write-Host "=====Phical mememory is less than 32G , prefer to config full dump====="
-						$needfreespace = $phymem_info*2+100+$reserved_space
-						$pagefile_size = [int32]($phymem_info+100)
+						$needfreespace = $phymem_info*2+257+$reserved_space
+						$pagefile_size = [int32]($phymem_info/1024)*1024+257
 						if($freespace -gt $needfreespace)
 						{
 							Write-Host "=====Disk $deviceid has enough free space, ready to config full dump====="
@@ -692,8 +692,8 @@ else
 				#Parse each disk free space
 					$deviceid = $_.DeviceID
 					$freespace = $_.FreeSpace/1024/1024
-					$needfreespace = $phymem_info*2+100+$reserved_space
-					$pagefile_size = [int32]($phymem_info+100)
+					$needfreespace = $phymem_info*2+257+$reserved_space
+					$pagefile_size = [int32]($phymem_info/1024)*1024+257
 					if($freespace -gt $needfreespace)
 					{
 						Write-Host "=====Disk $deviceid has enough free space, start to config full dump====="
@@ -814,8 +814,8 @@ else
 				{
 					#phical mememory is less than 32G , prefer to config full dump
 					Write-Host "=====Phical mememory is less than 32G , prefer to config full dump====="
-					$needfreespace = $phymem_info*2+100+$reserved_space
-					$pagefile_size = [int32]($phymem_info+100)
+					$needfreespace = $phymem_info*2+257+$reserved_space
+					$pagefile_size = [int32]($phymem_info/1024)*1024+257
 					if($freespace -gt $needfreespace)
 					{
 						Write-Host "=====Disk $deviceid has enough free space, ready to config full dump====="
