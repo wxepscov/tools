@@ -2,7 +2,7 @@
 Version:
 	Dump_AutoConfig 1.0
 Relase Data:
-	2019/09/02
+	2019/12/10
 Feature Enhancement:
 	Develop dump auto config script
 	Support below scenarios
